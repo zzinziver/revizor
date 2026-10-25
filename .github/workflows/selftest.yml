@@ -51,7 +51,13 @@ jobs:
         run: |
           # stop-words live in a repository secret (one per line), never in the repository
           printf '%s\n' "$REVIZOR_DENY_WORDS" > "$RUNNER_TEMP/deny.txt"
-          REVIZOR_DENY_FILE="$RUNNER_TEMP/deny.txt" node plugins/revizor/scripts/build-claude-ai.mjs --check
+          if ! REVIZOR_DENY_FILE="$RUNNER_TEMP/deny.txt" node plugins/revizor/scripts/build-claude-ai.mjs --check; then
+            # show what differs, so a stale file can be fixed without guessing
+            REVIZOR_DENY_FILE="$RUNNER_TEMP/deny.txt" node plugins/revizor/scripts/build-claude-ai.mjs > /dev/null
+            git --no-pager diff --stat -- claude-ai
+            git --no-pager diff -U1 -- claude-ai | head -80
+            exit 1
+          fi
 
   selftest:
     name: selftest (${{ matrix.os }})
