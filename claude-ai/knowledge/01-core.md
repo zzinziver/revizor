@@ -3,7 +3,6 @@
 
 ## Где что лежит
 
-- не входят (только со скриптами): checklists/group, checklists/rechecker, checklists/scorer, checklists/scout, cost, language/NOTICE
 - knowledge-extra/08-platforms.md: platforms/bitrix, platforms/craftum, platforms/custom, platforms/insales, platforms/nextjs-spa, platforms/readymag, platforms/shopify, platforms/taplink, platforms/tilda, platforms/webflow, platforms/wix, platforms/wordpress
 - knowledge-extra/09-site-types.md: verticals/education, verticals/finance, verticals/gov, verticals/landing, verticals/local-services, verticals/media, verticals/medical, verticals/nonprofit, verticals/portfolio, verticals/saas, verticals/shop
 - knowledge-extra/10-language.md: language/clarity-ru, language/en-ai-markers, language/ru-ai-markers, language/typography-ru, language/ux-copy
@@ -16,6 +15,7 @@
 - knowledge/05-checklists-tech.md: checklists/copy, checklists/i18n, checklists/legal, checklists/perf, checklists/privacy, checklists/security, checklists/seo-content, checklists/seo-tech, checklists/stability
 - knowledge/06-skeptic.md: checklists/skeptic
 - knowledge/07-market-index.md: markets/ru
+- не входят (только со скриптами): checklists/group, checklists/rechecker, checklists/scorer, checklists/scout, cost, language/NOTICE
 
 Версия справочников 1.0.0. Собрано из: core.md, conduct.md.
 В этой версии нет скриптов: где справочник говорит о замере, проверьте то же по скриншотам и коду страницы или пометьте «проверить в Claude Code».

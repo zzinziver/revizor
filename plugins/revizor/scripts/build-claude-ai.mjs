@@ -383,7 +383,7 @@ function build() {
   // a templated path (`markets/<market>.md`) → the bundles of that folder, core ones first, at most two
   const coreFiles = CORE.map(c => c.file);
   for (const [rel, file] of assigned) { const d = rel.includes('/') ? rel.split('/')[0] : null; if (!d) continue; if (!KDIR.has(d)) KDIR.set(d, []); if (!KDIR.get(d).includes(file)) KDIR.get(d).push(file); }
-  for (const [d, list] of KDIR) KDIR.set(d, list.sort((a, b) => (coreFiles.includes(b) - coreFiles.includes(a)) || a.localeCompare(b)).slice(0, 2).map(f => `«${f}»`).join(T(' или ', ' or ')));
+  for (const [d, list] of KDIR) KDIR.set(d, list.sort((a, b) => (coreFiles.includes(b) - coreFiles.includes(a)) || (a < b ? -1 : a > b ? 1 : 0)).slice(0, 2).map(f => `«${f}»`).join(T(' или ', ' or ')));
   const version = (() => { try { return JSON.parse(readFileSync(join(PLUGIN, '.claude-plugin', 'plugin.json'), 'utf8')).version || U.VERSION; } catch { return U.VERSION; } })();
   let core = null;
   for (const cap of ITEM_CAPS) { ITEM_CAP = cap; core = CORE.map(b => bundle(b, files, assigned, { compact: true, version })).filter(Boolean); if (core.reduce((n, o) => n + o.text.length, 0) + 4000 <= BUDGET) break; }
@@ -391,7 +391,7 @@ function build() {
   // where things are (in 01): every source file and the bundle it went to
   const groups = new Map();
   for (const rel of files) { const k = skipped.includes(rel) ? T('не входят (только со скриптами)', 'left out (scripts only)') : (EXTRA.some(b => b.file === assigned.get(rel)) ? 'knowledge-extra/' : 'knowledge/') + assigned.get(rel); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(rel.replace(/\.md$/, '')); }
-  const where = [T('## Где что лежит', '## Where things are'), '', ...[...groups].sort((a, b) => a[0].localeCompare(b[0])).map(([k, list]) => `- ${k}: ${list.join(', ')}`), ''];
+  const where = [T('## Где что лежит', '## Where things are'), '', ...[...groups].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0)).map(([k, list]) => `- ${k}: ${list.join(', ')}`), ''];
   if (core[0]) core[0].text = core[0].text.replace(/\n\n/, '\n\n' + where.join('\n') + '\n');
   return { files, core, extra, stray, skipped, cap: ITEM_CAP };
 }
