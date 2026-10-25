@@ -1,0 +1,15 @@
+# Text files are stored and checked out with LF on every OS: generated files (claude-ai/, EXPECTED.md)
+# are compared byte for byte in CI.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.xlsx binary
+*.pdf binary
+*.mp4 binary
+*.webm binary
+*.woff binary
+*.woff2 binary
