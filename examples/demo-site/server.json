@@ -1,0 +1,21 @@
+{
+  "about": "Как отдавать демо-сайт: правила для scripts/serve.mjs и встроенного сервера scripts/selftest.mjs. Заголовки и cookie ниже — намеренные ошибки (EXPECTED.md, «Безопасность»). root/iframe_root/replace читает selftest: он копирует сайт во временную папку, подставляет адреса обоих серверов и отдаёт копию через serve.mjs.",
+  "root": "site",
+  "iframe_root": "partner",
+  "replace": {
+    "__ORIGIN__": "origin",
+    "__IFRAME_ORIGIN__": "iframe_origin"
+  },
+  "replace_in": [".html", ".xml", ".txt"],
+  "headers": {
+    "*": { "Server": "nginx/1.14.0", "X-Powered-By": "PHP/5.6.40" }
+  },
+  "cookies": {
+    "*": [
+      "PHPSESSID=demo7f3c2a9b1e4d; Path=/",
+      "zerna_city=msk; Path=/; Max-Age=2592000"
+    ]
+  },
+  "soft_404": true,
+  "not_found_page": "404.html"
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькулятор зерна и обратный звонок</title>
+<style>
+body { margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #222; }
+main { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
+.box { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 16px 0; }
+input { font: inherit; padding: 8px 10px; border: 1px solid #999; border-radius: 6px; width: 100%; box-sizing: border-box; margin: 6px 0; }
+button { font: inherit; padding: 10px 16px; border: 0; border-radius: 6px; background: #036; color: #fff; }
+</style>
+</head>
+<body>
+<main>
+<h1>Сколько зерна взять на месяц</h1>
+<div class="box calc">
+  <label for="q">Чашек в день</label>
+  <input id="q" type="number" min="1" max="20" value="2">
+  <p>Нужно зерна: <b id="out">540</b> г</p>
+</div>
+<!-- callback blocks without <form>: fields are recognised only by their placeholders -->
+<div class="box callback">
+  <h2>Перезвоним и поможем выбрать</h2>
+  <input id="f1" type="text" placeholder="Как к вам обращаться">
+</div>
+<div class="box callback2">
+  <input id="f2" type="text" placeholder="Номер для связи">
+  <button type="button" id="cb">Жду звонка</button>
+</div>
+</main>
+<script>
+// 9 g per cup, 30 days
+const q = document.getElementById('q'), out = document.getElementById('out');
+q.addEventListener('input', () => { out.textContent = String(Math.max(0, Number(q.value) || 0) * 9 * 30); });
+</script>
+</body>
+</html>

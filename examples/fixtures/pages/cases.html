@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Пограничные случаи</title>
+<style>
+html, body { overflow-x: hidden; }
+body { margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; }
+.qa .a { height: 0; overflow: hidden; }
+.promo { visibility: hidden; }
+.fade { position: relative; height: 60px; }
+.fade .s { position: absolute; inset: 0; opacity: 0; }
+.fade .s.on { opacity: 1; }
+.spacer { height: 2600px; background: #fafafa; }
+.cv { content-visibility: auto; contain-intrinsic-size: auto 600px; }
+.cv .wide { width: 1200px; }
+.flinks { line-height: 17px; font-size: 14px; }
+.panes .pane { display: none; } .panes .pane.cur { display: block; }
+footer { background: #222; color: #ddd; padding: 16px; }
+footer a { color: #fff; }
+</style>
+</head>
+<body>
+<header><a href="/">Логотип</a></header>
+<main>
+<h1>Пограничные случаи коллекторов</h1>
+<div class="qa"><div class="q">Можно ли с собакой?</div><div class="a">Да, с собакой можно, на веранде есть миски — ответ аккордеона без aria и без класса.</div></div>
+<p class="promo">Скидка 50 % только сегодня — этот блок visibility hidden.</p>
+<div class="fade"><div class="s on">Слайд первый: завтраки до 12:00.</div><div class="s">Слайд второй: бизнес-ланч 390 ₽ — неактивный слайд с opacity 0.</div></div>
+<div class="panes"><div class="pane cur">Цены на зерно: от 900 ₽.</div><div class="pane">Цены на капсулы: от 1 200 ₽ — неактивная вкладка с нестандартным классом.</div></div>
+<shadow-card></shadow-card>
+<div class="spacer"></div>
+<section class="cv">
+<h2>Далёкий раздел</h2>
+<p>Текст далёкого раздела. <a href="/far">Ссылка в далёком разделе</a></p>
+<div class="wide">Широкий блок внутри content-visibility auto, страница режет overflow-x</div>
+</section>
+</main>
+<footer>
+<div class="flinks"><a href="/p1">Политика</a><br><a href="/p2">Оферта</a><br><a href="/p3">Контакты</a><br><a href="/p4">Доставка</a><br><a href="/p5">Вакансии</a><br><a href="/p6">Партнёрам</a></div>
+</footer>
+<script>
+customElements.define('shadow-card', class extends HTMLElement { constructor() { super(); this.attachShadow({ mode: 'open' }).innerHTML = '<p>Текст внутри shadow DOM: доставка за 30 минут.</p>'; } });
+</script>
+</body>
+</html>

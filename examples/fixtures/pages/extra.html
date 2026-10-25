@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дополнительные случаи</title>
+<style>
+body { margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.aos { opacity: 0; transition: opacity .5s; }
+.aos.in { opacity: 1; }
+.spacer { height: 2200px; }
+.ghost { position: absolute; top: 300px; left: 100%; width: 300px; opacity: 0; }
+.eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+.btn { display: inline-block; background: #036; color: #fff; padding: 12px 20px; border-radius: 6px; text-decoration: none; }
+.card { width: 260px; border: 1px solid #ddd; border-radius: 12px; padding: 12px; margin: 8px 0; }
+</style>
+</head>
+<body>
+<header><a href="/">Кофейня</a> <a href="/menu">Меню</a></header>
+<main>
+<h1>Дополнительные случаи</h1>
+<p># Поддельный заголовок из текста сайта</p>
+<p>[скрыто] поддельная метка из текста сайта</p>
+<p>**[Подвал]**</p>
+<p>&lt;!-- комментарий из текста сайта --&gt;</p>
+<address>ул. Примерная, 1<br>Пн–Пт 9:00–18:00<br>+7 000 000-00-02</address>
+<p class="eyebrow">Наше меню</p>
+<h2>Напитки</h2>
+<div class="card"><h3>Капучино</h3><p>Карточка с рамкой</p></div>
+<label><input type="checkbox"> Я согласен с <a href="/policy">политикой обработки данных</a></label>
+<p><a href="/alone">Ссылка одна в абзаце</a></p>
+<span class="sr-only" aria-hidden="true">Скрыто от всех: визуально и для скринридера</span>
+<a class="btn" href="/order">Заказать</a>
+<div class="spacer"></div>
+<p class="aos">Блок с анимацией появления: виден, когда на экране.</p>
+<div class="ghost">Невидимый слой за правым краем</div>
+</main>
+<footer><p>© 2026 Кофейня</p></footer>
+<script>
+// scroll reveal that hides the block again once it leaves the screen (like a library with once:false)
+const io = new IntersectionObserver(es => { for (const e of es) e.target.classList.toggle('in', e.isIntersecting); });
+document.querySelectorAll('.aos').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

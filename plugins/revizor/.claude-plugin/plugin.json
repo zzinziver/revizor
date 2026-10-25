@@ -1,0 +1,34 @@
+{
+  "name": "revizor",
+  "displayName": "Ревизор",
+  "version": "1.0.0",
+  "description": "Полное ревью сайта: 18 линз (+2 по типу сайта), скептик, критик полноты, придирчивый посетитель, главный редактор. Отчёт HTML + Excel (+PDF).",
+  "author": {
+    "name": "zzinziver",
+    "url": "https://github.com/zzinziver"
+  },
+  "homepage": "https://github.com/zzinziver/revizor#readme",
+  "repository": "https://github.com/zzinziver/revizor",
+  "license": "MIT",
+  "keywords": ["website-review", "site-audit", "seo", "ux", "accessibility", "wcag", "security", "russian", "yandex"],
+  "userConfig": {
+    "profile": {
+      "type": "string",
+      "title": "Профиль строгости",
+      "description": "standard или strict",
+      "default": "standard"
+    },
+    "audience": {
+      "type": "string",
+      "title": "Кому отчёт по умолчанию",
+      "description": "owner, team или external",
+      "default": "owner"
+    },
+    "lang": {
+      "type": "string",
+      "title": "Язык отчёта",
+      "description": "auto, ru или en",
+      "default": "auto"
+    }
+  }
+}

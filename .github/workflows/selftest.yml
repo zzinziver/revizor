@@ -1,0 +1,97 @@
+name: selftest
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: repository checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Syntax of every script
+        run: |
+          for f in $(git ls-files '*.mjs'); do node --check "$f" || exit 1; done
+      - name: Strict YAML frontmatter (agents, skills)
+        run: |
+          python3 -m pip install --quiet pyyaml
+          python3 - <<'PY'
+          import glob, sys, yaml
+          bad = 0
+          for f in sorted(glob.glob('plugins/revizor/agents/*.md') + glob.glob('plugins/revizor/skills/*/SKILL.md')):
+              t = open(f, encoding='utf-8').read()
+              end = t.find('\n---', 4)
+              try:
+                  d = yaml.safe_load(t[4:end]) if t.startswith('---\n') and end > 0 else None
+                  assert isinstance(d, dict) and d.get('name') and d.get('description'), 'name/description'
+              except Exception as e:
+                  print(f'{f}: {e}'); bad += 1
+          sys.exit(1 if bad else 0)
+          PY
+      - name: Paths, script flags, no private links
+        run: node tools/ci/check-repo.mjs
+      - name: Plugin manifests
+        run: |
+          npm install --global @anthropic-ai/claude-code
+          claude plugin validate .
+          claude plugin validate plugins/revizor
+      - name: claude.ai knowledge is up to date
+        env:
+          REVIZOR_DENY_WORDS: ${{ secrets.REVIZOR_DENY_WORDS }}
+        run: |
+          # stop-words live in a repository secret (one per line), never in the repository
+          printf '%s\n' "$REVIZOR_DENY_WORDS" > "$RUNNER_TEMP/deny.txt"
+          REVIZOR_DENY_FILE="$RUNNER_TEMP/deny.txt" node plugins/revizor/scripts/build-claude-ai.mjs --check
+
+  selftest:
+    name: selftest (${{ matrix.os }})
+    needs: checks
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 150
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Download axe-core into the cache
+        run: node plugins/revizor/scripts/collectors/axe.mjs --prefetch
+      - name: Unit checks on small pages
+        run: node plugins/revizor/scripts/selftest.mjs --units --out "$RUNNER_TEMP/Ревизор тест"
+      - name: Selftest on the demo site (folder with a space and Cyrillic)
+        run: |
+          set +e  # code 75 means "continue with --resume"
+          OUT="$RUNNER_TEMP/Ревизор тест/full"
+          extra=""
+          for i in $(seq 1 16); do
+            node plugins/revizor/scripts/selftest.mjs --out "$OUT" $extra
+            code=$?
+            [ "$code" -ne 75 ] && break
+            extra="--resume"
+          done
+          RUN=$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.argv[1], 'utf8')).run)" "$OUT/selftest-last.json")
+          node plugins/revizor/scripts/serve.mjs --stats "$RUN/selftest/server-log.jsonl" --fail-on-writes || code=1
+          exit $code
+      - name: Keep the selftest table
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selftest-${{ matrix.os }}
+          path: ${{ runner.temp }}/Ревизор тест/full/**/selftest/*.md
+          if-no-files-found: ignore

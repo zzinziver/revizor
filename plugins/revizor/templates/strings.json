@@ -1,0 +1,778 @@
+{
+  "ru": {
+    "sev": {
+      "owner": [
+        "Срочно",
+        "Важно",
+        "Стоит сделать",
+        "Мелочи"
+      ],
+      "team": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "external": [
+        "Исправить в первую очередь",
+        "Важно",
+        "Желательно",
+        "Улучшение"
+      ]
+    },
+    "sev_hint": [
+      "теряются заявки, деньги или индексация, на сайте неверные цены и условия, сломан главный сценарий",
+      "заметно мешает людям, доверию или поиску; исправить в ближайшие две недели",
+      "ощутимая потеря качества; исправить за один-два месяца",
+      "полировка и мелкие правки"
+    ],
+    "default_title": "Ревью сайта {site}",
+    "default_title_rivals": "Конкуренты: идеи для {site}",
+    "default_title_recheck": "Проверка правок: {site}",
+    "toc": "Содержание",
+    "total": "всего",
+    "of10": "из 10",
+    "score": "Оценка",
+    "score_strict": "Строгая",
+    "score_market": "Рыночная",
+    "score_mean": "Среднее",
+    "score_area": "Направление",
+    "score_spread": "Комиссии разошлись на {d} балла: смотрите пояснения ниже.",
+    "score_drivers": "Сильнее всего на оценку влияют",
+    "sections": {
+      "essence": "Главное",
+      "goals": "Ответы на ваши вопросы",
+      "lights": "Состояние по разделам",
+      "top": "Что сделать первым",
+      "quick": "Быстрые победы",
+      "scores": "Оценки",
+      "cards": "Главные проблемы",
+      "cards_team": "Находки",
+      "cards_external": "Главные замечания",
+      "rest": "Остальные замечания",
+      "decisions": "Развилки: нужно ваше решение",
+      "taste": "Вопросы вкуса",
+      "taste_external": "Предложения по оформлению",
+      "strategy": "Стратегия",
+      "strategy_seo": "Поиск",
+      "strategy_site": "Развитие сайта",
+      "new_pages": "Новые страницы",
+      "not_doing": "Чего не делаем",
+      "strengths": "Что уже работает",
+      "device": "Проверьте на телефоне",
+      "advice": "Советы",
+      "todo": "Что нужно от вас",
+      "not_checked": "Что не проверяли",
+      "method": "Как проверяли",
+      "method_external": "Как проводилось ревью",
+      "external": "Что отправлялось во внешние сервисы",
+      "legend": "Обозначения",
+      "terms": "Термины",
+      "minor_edits": "Мелкие правки",
+      "rivals": "С кем сравнивали",
+      "minor_text": "Правки текста: было и стало",
+      "minor_other": "Другие мелкие правки"
+    },
+    "rest_more": "Остальные важные (P1)",
+    "cols": {
+      "rid": "№",
+      "sev": "Важность",
+      "what": "Что на сайте",
+      "where": "Где",
+      "fix": "Как исправить",
+      "who": "Кто",
+      "when": "Когда",
+      "action": "Что сделать",
+      "effect": "Эффект",
+      "why": "Зачем",
+      "url": "Адрес",
+      "intent": "Запрос",
+      "area": "Раздел",
+      "state": "Состояние",
+      "before": "Было",
+      "after": "Стало",
+      "term": "Термин",
+      "meaning": "Что значит",
+      "service": "Сервис",
+      "count": "Запросов",
+      "sent": "Что ушло"
+    },
+    "card": {
+      "where": "Где",
+      "problem": "Что не так",
+      "evidence": "Факт",
+      "impact": "Почему это важно",
+      "fix": "Как исправить",
+      "before": "Было",
+      "after": "Стало",
+      "who": "Кто",
+      "effort": "Объём",
+      "verified": "Правку проверили подменой на странице",
+      "decision": "Нужно ваше решение",
+      "device": "Проверьте на устройстве",
+      "unverified": "Требует проверки",
+      "sitewide": "на всех страницах",
+      "pages_est": "≈ {n} стр.",
+      "more_places": "и ещё {n}",
+      "method": "Чем проверено",
+      "norm": "Норма",
+      "confidence": "Уверенность",
+      "verdict": "Перепроверка",
+      "lenses": "Линзы",
+      "trail": "Важность менялась",
+      "scenario": "Сценарий",
+      "fix_check": "Как проверили правку",
+      "uid": "uid",
+      "shot": "Кадр",
+      "fold": "первый экран",
+      "full": "вся страница",
+      "part": "страница",
+      "fix_pair_before": "Было",
+      "fix_pair_after": "Стало: правка подставлена на странице"
+    },
+    "verdict": {
+      "confirmed": "подтверждено",
+      "adjusted": "подтверждено с поправкой",
+      "unverified": "не перепроверено"
+    },
+    "confidence": {
+      "high": "высокая",
+      "medium": "средняя",
+      "low": "низкая"
+    },
+    "lights": {
+      "red": "плохо",
+      "yellow": "есть проблемы",
+      "green": "в порядке"
+    },
+    "who": {
+      "cms": "вы сами в {platform}",
+      "cms_generic": "вы сами в CMS",
+      "dev": "разработчик",
+      "copy": "копирайтер",
+      "ext": "внешний сервис",
+      "decision": "нужно ваше решение",
+      "cms_external": "в редакторе {platform}",
+      "cms_generic_external": "в редакторе сайта",
+      "cms_team": "владелец в {platform}",
+      "cms_generic_team": "владелец в CMS"
+    },
+    "methods": {
+      "script": "замер скриптом",
+      "probe": "проверка в браузере",
+      "axe": "автопроверка доступности axe",
+      "fetch": "запрос к серверу",
+      "screenshot": "по скриншоту",
+      "dom": "по коду страницы",
+      "manual": "вручную"
+    },
+    "home": "Главная",
+    "all_site": "Весь сайт",
+    "decision_rec": "рекомендуем",
+    "goals_q": "Вопрос",
+    "memory_applied": "Учтено прошлых решений: {n}.",
+    "models_default": "Модели: {models} — подписка не определена. Чтобы все агенты работали на модели сессии, запустите с «модели max» или настройте /revizor:setup.",
+    "process": "Найдено {found}, подтверждено {confirmed}, с поправкой {adjusted}, снято {rejected}, без перепроверки {unverified}; кругов проверки: {rounds}.",
+    "external_none": "Во внешние сервисы ничего не отправлялось.",
+    "footer": "Отчёт собран Ревизором {version} · {date}",
+    "legend_note": "Номер вида P1-03 — строка в таблице замечаний.",
+    "advice_prefix": "",
+    "rid_link": "см. {rid}",
+    "empty": "нет",
+    "minor_note": "Все мелкие правки по тексту и оформлению.",
+    "terms_note": "Пояснения к словам, подчёркнутым в тексте отчёта.",
+    "xlsx": {
+      "sheets": {
+        "main": "Замечания",
+        "place": "По месту правки",
+        "summary": "Сводка",
+        "howto": "Как читать"
+      },
+      "headers": [
+        "№",
+        "Важность",
+        "Раздел сайта",
+        "Тема",
+        "Что на сайте",
+        "Где (URL · блок)",
+        "Как исправить",
+        "Кто",
+        "Трудоёмкость",
+        "Статус",
+        "Комментарий",
+        "Проверено"
+      ],
+      "headers_team": [
+        "Линзы",
+        "Метод",
+        "Норма",
+        "Уверенность",
+        "uid"
+      ],
+      "statuses": [
+        "новое",
+        "в работе",
+        "исправлено",
+        "не будем исправлять"
+      ],
+      "place_headers": [
+        "Место правки",
+        "№",
+        "Важность",
+        "Что исправить",
+        "Как проверить"
+      ],
+      "summary_headers": [
+        "Показатель",
+        "При выпуске отчёта",
+        "Сейчас"
+      ],
+      "total": "Всего замечаний",
+      "status_row": "Статус «{s}»",
+      "howto_headers": [
+        "Что",
+        "Пояснение"
+      ],
+      "howto": [
+        [
+          "Лист «Замечания»",
+          "Одна строка — одна проблема. Номер в столбце «№» совпадает с номером в отчёте."
+        ],
+        [
+          "Важность",
+          "{legend}"
+        ],
+        [
+          "Статус",
+          "Выберите из списка: новое, в работе, исправлено, не будем исправлять. «Не будем исправлять» с комментарием больше не предлагаем."
+        ],
+        [
+          "Комментарий",
+          "Пишите сюда решения и вопросы: при проверке правок они сохраняются."
+        ],
+        [
+          "Проверено",
+          "Дата, когда правку проверили на сайте."
+        ],
+        [
+          "Лист «По месту правки»",
+          "Те же замечания, собранные по месту, где их исправляют: шаблон, общий CSS, блок CMS, сервер, тексты."
+        ],
+        [
+          "Лист «Сводка»",
+          "Сколько замечаний по важности и статусам. Столбец «Сейчас» пересчитывается по таблице."
+        ]
+      ],
+      "howto_recheck": [
+        "Проверка правок",
+        "Когда поправите, запустите /revizor:recheck и укажите этот файл: статусы и комментарии перенесутся."
+      ],
+      "place_other": "Другое",
+      "check_line": "Открыть {url}{vp}{state} и сверить с «Как исправить»",
+      "check_after": "Открыть {url}{vp}{state}: должно быть «{after}»",
+      "check_norm": "Открыть {url}{vp}{state}: проверить по норме — {norm}"
+    },
+    "places": {
+      "шаблон": "Шаблон страницы",
+      "общий CSS": "Общий CSS",
+      "блок CMS": "Блок в конструкторе",
+      "настройки платформы": "Настройки платформы",
+      "сервер": "Сервер",
+      "контент": "Тексты и материалы",
+      "внешний сервис": "Внешний сервис"
+    },
+    "lens_names": {
+      "product": "Продукт и путь к действию",
+      "facts": "Факты и цены",
+      "visitor": "Взгляд посетителя",
+      "ux": "Сценарии и навигация",
+      "visual": "Визуальный дизайн",
+      "typography": "Шрифты и типографика",
+      "color": "Цвет и контраст",
+      "mobile": "Мобильная версия",
+      "a11y": "Доступность",
+      "copy": "Тексты",
+      "seo-tech": "Техническое SEO",
+      "seo-content": "Контентное SEO",
+      "perf": "Скорость",
+      "stability": "Стабильность",
+      "forms": "Формы и аналитика",
+      "security": "Безопасность",
+      "privacy": "Приватность и cookie",
+      "legal": "Право",
+      "ecommerce": "Магазин",
+      "i18n": "Языковые версии",
+      "seo": "SEO",
+      "health": "Здоровье сайта"
+    },
+    "rivals": {
+      "tiles": "Что видно у конкурентов",
+      "directions": "Направления",
+      "top": "Лучшие идеи",
+      "ideas": "Все идеи",
+      "matrix": "Сравнение",
+      "bestof": "Лучшее у конкурентов",
+      "gallery": "Разбор по сайтам",
+      "propose": "Предлагаем",
+      "closes": "Что закрывает",
+      "page": "Страница",
+      "evidence": "Основание",
+      "risk": "Риск",
+      "benefit": "польза",
+      "ease": "простота",
+      "now": "Сейчас у вас",
+      "seen": "Где видели",
+      "marks": "Мои решения",
+      "take": "беру",
+      "no": "нет",
+      "discuss": "обсудить",
+      "copy": "Скопировать мои решения",
+      "copied": "Скопировано",
+      "copy_fail": "Не удалось скопировать: выделите текст ниже и скопируйте вручную.",
+      "marks_hint": "Отметки хранятся только в этом браузере. Скопируйте их и вставьте в чат.",
+      "kind": {
+        "take": "взять",
+        "adapt": "адаптировать",
+        "avoid": "избегать"
+      },
+      "strong": "Сильное",
+      "weak": "Слабое",
+      "not_visible": "Не видно",
+      "ours": "наш",
+      "rank": "место",
+      "block": "Тип блока",
+      "for_us": "Что взять себе",
+      "hosts": "Где видели",
+      "block_types": {
+        "hero": "Первый экран",
+        "demo": "Показ продукта",
+        "services": "Услуги",
+        "steps": "Шаги",
+        "pricing": "Цены",
+        "trust": "Доверие",
+        "calculator": "Калькулятор",
+        "comparison": "Сравнение",
+        "mascot": "Маскот",
+        "nav": "Навигация",
+        "form": "Форма",
+        "other": "Другое"
+      }
+    },
+    "recheck": {
+      "status": {
+        "fixed": "Исправлено",
+        "partial": "Исправлено частично",
+        "not_fixed": "Не исправлено",
+        "regressed": "Стало хуже",
+        "not_applicable": "Неприменимо",
+        "cannot_check": "Не удалось проверить"
+      },
+      "regressions": "Что сломалось после правок",
+      "new": "Новое",
+      "items": "Проверка по замечаниям",
+      "note": "Комментарий",
+      "before": "Было",
+      "after": "Стало"
+    },
+    "diff": {
+      "title": "Что изменилось с прошлого раза",
+      "appeared": "Появилось: {n}",
+      "fixed": "Исправлено: {n}",
+      "same": "Без изменений: {n}",
+      "first": "Первый снимок, сравнивать не с чем."
+    },
+    "effort_words": {
+      "S": "быстро",
+      "M": "до дня",
+      "L": "дольше дня"
+    }
+  },
+  "en": {
+    "sev": {
+      "owner": [
+        "Urgent",
+        "Important",
+        "Worth doing",
+        "Minor"
+      ],
+      "team": [
+        "P0",
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "external": [
+        "Fix first",
+        "Important",
+        "Desirable",
+        "Improvement"
+      ]
+    },
+    "sev_hint": [
+      "leads, money or indexing are lost, wrong prices or terms, the main path is broken",
+      "noticeably hurts visitors, trust or search; fix within two weeks",
+      "a visible loss of quality; fix within one or two months",
+      "polish and small edits"
+    ],
+    "default_title": "Website review: {site}",
+    "default_title_rivals": "Competitors: ideas for {site}",
+    "default_title_recheck": "Fix check: {site}",
+    "toc": "Contents",
+    "total": "total",
+    "of10": "of 10",
+    "score": "Score",
+    "score_strict": "Strict",
+    "score_market": "Market",
+    "score_mean": "Mean",
+    "score_area": "Area",
+    "score_spread": "The two panels differ by {d} points: see the notes below.",
+    "score_drivers": "Biggest drivers",
+    "sections": {
+      "essence": "Key points",
+      "goals": "Answers to your questions",
+      "lights": "Status by area",
+      "top": "Do first",
+      "quick": "Quick wins",
+      "scores": "Scores",
+      "cards": "Main problems",
+      "cards_team": "Findings",
+      "cards_external": "Main issues",
+      "rest": "Other issues",
+      "decisions": "Decisions for you",
+      "taste": "Matters of taste",
+      "taste_external": "Design suggestions",
+      "strategy": "Strategy",
+      "strategy_seo": "Search",
+      "strategy_site": "Website growth",
+      "new_pages": "New pages",
+      "not_doing": "Not doing",
+      "strengths": "What already works",
+      "device": "Check on a phone",
+      "advice": "Advice",
+      "todo": "What we need from you",
+      "not_checked": "Not checked",
+      "method": "How we checked",
+      "method_external": "How the review was done",
+      "external": "Sent to external services",
+      "legend": "Legend",
+      "terms": "Terms",
+      "minor_edits": "Small edits",
+      "rivals": "Compared with",
+      "minor_text": "Text edits: before and after",
+      "minor_other": "Other small edits"
+    },
+    "rest_more": "Other important (P1)",
+    "cols": {
+      "rid": "No.",
+      "sev": "Priority",
+      "what": "Issue",
+      "where": "Where",
+      "fix": "How to fix",
+      "who": "Who",
+      "when": "When",
+      "action": "Action",
+      "effect": "Effect",
+      "why": "Why",
+      "url": "URL",
+      "intent": "Query",
+      "area": "Area",
+      "state": "Status",
+      "before": "Before",
+      "after": "After",
+      "term": "Term",
+      "meaning": "Meaning",
+      "service": "Service",
+      "count": "Requests",
+      "sent": "What was sent"
+    },
+    "card": {
+      "where": "Where",
+      "problem": "What is wrong",
+      "evidence": "Fact",
+      "impact": "Why it matters",
+      "fix": "How to fix",
+      "before": "Before",
+      "after": "After",
+      "who": "Who",
+      "effort": "Effort",
+      "verified": "The fix was tested by substitution on the page",
+      "decision": "Your decision needed",
+      "device": "Check on a device",
+      "unverified": "Needs verification",
+      "sitewide": "site-wide",
+      "pages_est": "≈ {n} pages",
+      "more_places": "and {n} more",
+      "method": "Checked by",
+      "norm": "Norm",
+      "confidence": "Confidence",
+      "verdict": "Re-check",
+      "lenses": "Lenses",
+      "trail": "Priority changed",
+      "scenario": "Scenario",
+      "fix_check": "How the fix was tested",
+      "uid": "uid",
+      "shot": "Shot",
+      "fold": "first screen",
+      "full": "full page",
+      "part": "page",
+      "fix_pair_before": "Before",
+      "fix_pair_after": "After: the fix applied on the page"
+    },
+    "verdict": {
+      "confirmed": "confirmed",
+      "adjusted": "confirmed with a correction",
+      "unverified": "not re-checked"
+    },
+    "confidence": {
+      "high": "high",
+      "medium": "medium",
+      "low": "low"
+    },
+    "lights": {
+      "red": "bad",
+      "yellow": "issues",
+      "green": "fine"
+    },
+    "who": {
+      "cms": "you, in {platform}",
+      "cms_generic": "you, in the CMS",
+      "dev": "developer",
+      "copy": "copywriter",
+      "ext": "external service",
+      "decision": "your decision",
+      "cms_external": "in the {platform} editor",
+      "cms_generic_external": "in the site editor",
+      "cms_team": "owner, in {platform}",
+      "cms_generic_team": "owner, in the CMS"
+    },
+    "methods": {
+      "script": "script measurement",
+      "probe": "browser check",
+      "axe": "axe accessibility check",
+      "fetch": "server request",
+      "screenshot": "screenshot",
+      "dom": "page code",
+      "manual": "manual"
+    },
+    "home": "Home",
+    "all_site": "Whole site",
+    "decision_rec": "recommended",
+    "goals_q": "Question",
+    "memory_applied": "Earlier decisions applied: {n}.",
+    "models_default": "Models: {models} — the subscription is not known. To run every agent on the session model, start with «models max» or set up /revizor:setup.",
+    "process": "Found {found}, confirmed {confirmed}, corrected {adjusted}, dropped {rejected}, not re-checked {unverified}; check rounds: {rounds}.",
+    "external_none": "Nothing was sent to external services.",
+    "footer": "Built by Revizor {version} · {date}",
+    "legend_note": "A number like P1-03 is a row in the issue table.",
+    "advice_prefix": "",
+    "rid_link": "see {rid}",
+    "empty": "none",
+    "minor_note": "All small text and layout edits.",
+    "terms_note": "What the underlined words in this report mean.",
+    "xlsx": {
+      "sheets": {
+        "main": "Issues",
+        "place": "By fix place",
+        "summary": "Summary",
+        "howto": "How to read"
+      },
+      "headers": [
+        "No.",
+        "Priority",
+        "Site section",
+        "Topic",
+        "Issue",
+        "Where (URL · block)",
+        "How to fix",
+        "Who",
+        "Effort",
+        "Status",
+        "Comment",
+        "Checked"
+      ],
+      "headers_team": [
+        "Lenses",
+        "Method",
+        "Norm",
+        "Confidence",
+        "uid"
+      ],
+      "statuses": [
+        "new",
+        "in progress",
+        "fixed",
+        "won't fix"
+      ],
+      "place_headers": [
+        "Fix place",
+        "No.",
+        "Priority",
+        "What to fix",
+        "How to check"
+      ],
+      "summary_headers": [
+        "Metric",
+        "At report time",
+        "Now"
+      ],
+      "total": "Total issues",
+      "status_row": "Status “{s}”",
+      "howto_headers": [
+        "What",
+        "Explanation"
+      ],
+      "howto": [
+        [
+          "Sheet “Issues”",
+          "One row is one problem. The number in “No.” matches the report."
+        ],
+        [
+          "Priority",
+          "{legend}"
+        ],
+        [
+          "Status",
+          "Pick from the list: new, in progress, fixed, won't fix. “Won't fix” with a comment is not suggested again."
+        ],
+        [
+          "Comment",
+          "Write decisions and questions here: they are kept when fixes are re-checked."
+        ],
+        [
+          "Checked",
+          "The date the fix was checked on the site."
+        ],
+        [
+          "Sheet “By fix place”",
+          "The same issues grouped by where they are fixed: template, shared CSS, CMS block, server, texts."
+        ],
+        [
+          "Sheet “Summary”",
+          "Counts by priority and status. The “Now” column recalculates from the table."
+        ]
+      ],
+      "howto_recheck": [
+        "Fix check",
+        "After fixing, run /revizor:recheck with this file: statuses and comments carry over."
+      ],
+      "place_other": "Other",
+      "check_line": "Open {url}{vp}{state} and compare with “How to fix”",
+      "check_after": "Open {url}{vp}{state}: it should read “{after}”",
+      "check_norm": "Open {url}{vp}{state}: check against the norm — {norm}"
+    },
+    "places": {
+      "шаблон": "Page template",
+      "общий CSS": "Shared CSS",
+      "блок CMS": "CMS block",
+      "настройки платформы": "Platform settings",
+      "сервер": "Server",
+      "контент": "Texts and media",
+      "внешний сервис": "External service"
+    },
+    "lens_names": {
+      "product": "Product and path to action",
+      "facts": "Facts and prices",
+      "visitor": "Visitor view",
+      "ux": "Scenarios and navigation",
+      "visual": "Visual design",
+      "typography": "Fonts and typography",
+      "color": "Colour and contrast",
+      "mobile": "Mobile",
+      "a11y": "Accessibility",
+      "copy": "Copy",
+      "seo-tech": "Technical SEO",
+      "seo-content": "Content SEO",
+      "perf": "Speed",
+      "stability": "Stability",
+      "forms": "Forms and analytics",
+      "security": "Security",
+      "privacy": "Privacy and cookies",
+      "legal": "Legal",
+      "ecommerce": "Shop",
+      "i18n": "Languages",
+      "seo": "SEO",
+      "health": "Site health"
+    },
+    "rivals": {
+      "tiles": "What competitors show",
+      "directions": "Directions",
+      "top": "Best ideas",
+      "ideas": "All ideas",
+      "matrix": "Comparison",
+      "bestof": "Best of competitors",
+      "gallery": "Site by site",
+      "propose": "We propose",
+      "closes": "Solves",
+      "page": "Page",
+      "evidence": "Basis",
+      "risk": "Risk",
+      "benefit": "benefit",
+      "ease": "ease",
+      "now": "Your site now",
+      "seen": "Seen at",
+      "marks": "My decisions",
+      "take": "take",
+      "no": "no",
+      "discuss": "discuss",
+      "copy": "Copy my decisions",
+      "copied": "Copied",
+      "copy_fail": "Copy failed: select the text below and copy it manually.",
+      "marks_hint": "Marks are stored only in this browser. Copy them and paste into the chat.",
+      "kind": {
+        "take": "take",
+        "adapt": "adapt",
+        "avoid": "avoid"
+      },
+      "strong": "Strong",
+      "weak": "Weak",
+      "not_visible": "Not visible",
+      "ours": "ours",
+      "rank": "rank",
+      "block": "Block type",
+      "for_us": "What to take",
+      "hosts": "Seen at",
+      "block_types": {
+        "hero": "First screen",
+        "demo": "Product demo",
+        "services": "Services",
+        "steps": "Steps",
+        "pricing": "Pricing",
+        "trust": "Trust",
+        "calculator": "Calculator",
+        "comparison": "Comparison",
+        "mascot": "Mascot",
+        "nav": "Navigation",
+        "form": "Form",
+        "other": "Other"
+      }
+    },
+    "recheck": {
+      "status": {
+        "fixed": "Fixed",
+        "partial": "Partly fixed",
+        "not_fixed": "Not fixed",
+        "regressed": "Got worse",
+        "not_applicable": "Not applicable",
+        "cannot_check": "Could not check"
+      },
+      "regressions": "What broke after the fixes",
+      "new": "New",
+      "items": "Check by issue",
+      "note": "Note",
+      "before": "Before",
+      "after": "After"
+    },
+    "diff": {
+      "title": "Changes since the last run",
+      "appeared": "New: {n}",
+      "fixed": "Fixed: {n}",
+      "same": "Unchanged: {n}",
+      "first": "First snapshot, nothing to compare with yet."
+    },
+    "effort_words": {
+      "S": "quick",
+      "M": "up to a day",
+      "L": "more than a day"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+# OS and editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (the plugin has no npm dependencies)
+node_modules/
+npm-debug.log*
+
+# Review runs never go to the repository: reports of real sites stay on the reviewer's machine.
+# Every pattern here is anchored to the repository root (leading slash): git on Windows and macOS
+# ignores case, and an unanchored "Revizor/" would also hide plugins/revizor/.
+/Revizor/
+/revizor-reports/
+/revizor-selftest/
+/runs/
+/out/
+
+# Local settings and secrets
+.env
+.env.*
+.claude/settings.local.json
+
+# Temporary files
+/tmp/
+*.tmp
+*.log
