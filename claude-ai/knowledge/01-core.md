@@ -17,7 +17,7 @@
 - knowledge/07-market-index.md: markets/ru
 - не входят (только со скриптами): checklists/group, checklists/rechecker, checklists/scorer, checklists/scout, cost, language/NOTICE
 
-Версия справочников 1.0.0. Собрано из: core.md, conduct.md.
+Версия справочников 1.0.1. Собрано из: core.md, conduct.md.
 В этой версии нет скриптов: где справочник говорит о замере, проверьте то же по скриншотам и коду страницы или пометьте «проверить в Claude Code».
 
 <!-- source: knowledge/core.md -->
