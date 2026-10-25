@@ -40,7 +40,7 @@ English → [README.en.md](README.en.md)
 
 ## Установка
 
-Нужно: [Claude Code](https://docs.claude.com/en/docs/claude-code), Node.js 22 или новее, браузер на базе Chromium (Chrome, Edge, Chromium, Brave, Яндекс Браузер).
+Нужно: [Claude Code](https://docs.claude.com/en/docs/claude-code), Node.js 22.23.4+, 24.22.1+ или 26.12.1+ (в версиях старше — дыры безопасности, исправленные в октябре 2026), браузер на базе Chromium (Chrome, Edge, Chromium, Brave, Яндекс Браузер).
 
 В Claude Code:
 

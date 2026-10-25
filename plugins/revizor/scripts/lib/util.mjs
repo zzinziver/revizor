@@ -10,7 +10,7 @@ import { gunzipSync } from 'node:zlib';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { createHash } from 'node:crypto';
 
-export const VERSION = '1.0.1';
+export const VERSION = '1.0.2';
 export { sleep };
 
 // ---------- arguments ----------

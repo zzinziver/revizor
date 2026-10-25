@@ -42,7 +42,7 @@ Reports go to `~/Documents/Revizor/<site>/<date>/` (change the folder in `/reviz
 
 ## Install
 
-You need [Claude Code](https://docs.claude.com/en/docs/claude-code), Node.js 22 or newer and a Chromium-based browser (Chrome, Edge, Chromium, Brave, Yandex Browser).
+You need [Claude Code](https://docs.claude.com/en/docs/claude-code), Node.js 22.23.4+, 24.22.1+ or 26.12.1+ (older builds have security holes fixed in October 2026) and a Chromium-based browser (Chrome, Edge, Chromium, Brave, Yandex Browser).
 
 In Claude Code:
 

@@ -402,8 +402,17 @@ async function main() {
   const add = (id, status, text, data) => { checks.push({ id, status, text, ...(data ? { data } : {}) }); };
   const result = { tool: 'doctor', version: U.VERSION, generated: U.nowIso(), os: { platform: process.platform, name: osName(), arch: process.arch }, offline: OFFLINE, paths: pathsInfo() };
 
-  // Node
-  add('node', 'ok', `Node ${process.versions.node}`);
+  // Node: Revizor downloads pages of sites it does not trust, so the Node security releases matter here
+  // (21.10.2026: Brotli decoder RCE, DNS and TLS hostname bypasses — nodejs.org/en/blog/vulnerability/october-2026-security-releases).
+  const NODE_PATCHED = { 22: '22.23.4', 24: '24.22.1', 26: '26.12.1' };
+  const verNum = v => v.split('.').map(Number).reduce((a, n) => a * 1000 + n, 0);
+  const patched = NODE_PATCHED[nodeMajor];
+  if (patched && verNum(process.versions.node) >= verNum(patched)) add('node', 'ok', `Node ${process.versions.node}`);
+  else add('node', 'warn', patched
+    ? (en ? `Node ${process.versions.node} has known security holes (fixed in ${patched}, October 2026): Revizor reads pages of other people's sites, update Node before reviewing — https://nodejs.org/en/download`
+          : `Node ${process.versions.node} с известными дырами безопасности (исправлены в ${patched}, октябрь 2026): Ревизор читает страницы чужих сайтов — обновите Node перед ревью: https://nodejs.org/en/download`)
+    : (en ? `Node ${process.versions.node}: this line gets no security fixes — install the LTS (24.22.1 or newer) or 22.23.4+ / 26.12.1+.`
+          : `Node ${process.versions.node}: эта ветка не получает исправлений безопасности — поставьте LTS (24.22.1 или новее) либо 22.23.4+ / 26.12.1+.`));
 
   // run folder root
   const cfgR = U.readRevizorConfig();
